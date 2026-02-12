@@ -1,4 +1,8 @@
 ## PARTE 2 — BDD (Gherkin)
+
+Funcionalidade: Painel de Parcelas
+
+```
 Funcionalidade: Painel de Parcelas
 
   Cenário: Exibir parcelas separadas por status no painel
@@ -32,3 +36,4 @@ Funcionalidade: Painel de Parcelas
     Quando tento acessar o Painel de Parcelas
     Então devo ver mensagem de "Acesso negado"
     E não devo visualizar dados de parcelas
+```
