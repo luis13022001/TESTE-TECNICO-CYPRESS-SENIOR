@@ -198,3 +198,44 @@ Funcionalidade: Painel de Parcelas
     Então devo ver mensagem de "Acesso negado"
     E não devo visualizar dados de parcelas
 ```
+
+
+## PARTE 3 — Casos de Teste Estruturados (2 cenários)
+
+---
+
+### Caso de Teste 01 — Filtrar parcelas por período selecionado (BDD Cenário 2)
+
+**Pré-condição:**
+- Usuário autenticado com permissão para acessar o Painel de Parcelas.
+- Existem parcelas cadastradas para a empresa em datas diferentes, por exemplo:
+  - Parcela A com vencimento em **10/01/2026** (dentro do período)
+  - Parcela B com vencimento em **10/02/2026** (fora do período)
+
+**Passos:**
+1. Acessar o **Painel de Parcelas**.
+2. Informar **Data inicial** = `01/01/2026`.
+3. Informar **Data final** = `31/01/2026`.
+4. Clicar no botão **Aplicar filtro**.
+
+**Resultado esperado:**
+- Exibir somente parcelas dentro do intervalo **01/01/2026 a 31/01/2026**.
+- Não exibir parcelas fora do período (ex.: vencimento em **10/02/2026**).
+- As parcelas exibidas devem permanecer corretamente classificadas (Vencidas/ A vencer/ Pagas) conforme seus dados.
+
+---
+
+### Caso de Teste 02 — Bloquear acesso ao painel para usuário sem permissão (BDD Cenário 5)
+
+**Pré-condição:**
+- Usuário autenticado **sem permissão** para visualizar o Painel de Parcelas (perfil/role sem acesso).
+
+**Passos:**
+1. Realizar login com um usuário **sem permissão**.
+2. Tentar acessar o Painel de Parcelas pelo **menu**.
+3. (Se aplicável) Tentar acessar o Painel de Parcelas pela **URL/rota direta**.
+
+**Resultado esperado:**
+- O sistema deve impedir o acesso ao Painel de Parcelas.
+- Exibir mensagem de **"Acesso negado"** (ou comportamento equivalente definido).
+- Nenhuma informação de parcelas deve ser exibida (nem parcialmente).
