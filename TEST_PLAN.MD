@@ -56,7 +56,7 @@ Casos de borda:
 ---
 
 ### Regressão Seletiva
-
+.
 Funcionalidades impactadas:
 
 - Login  
